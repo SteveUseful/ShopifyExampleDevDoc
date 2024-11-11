@@ -3,7 +3,7 @@
 <div style="text-align: center;">
   
 # Configure Redis using a ConfigMap
-In this guide, you’ll set up and configure a Redis instance within a Kubernetes environment using a [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/)! With ConfigMaps, you can manage dynamic, environment-specific settings, enhancing flexibility and control over your Redis configurations in Kubernetes. 
+In this guide, you’ll set up and configure a Redis instance within a Kubernetes environment using a [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/)! With ConfigMaps, you can manage dynamic, environment-specific settings, enhancing flexibility and control over your Redis configurations in Kubernetes.  
 
 </div>
 
