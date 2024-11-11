@@ -120,7 +120,7 @@ To confirm that the Redis Pod and ConfigMap are correctly applied, follow these 
 ```shell
 kubectl get pod/redis configmap/example-redis-config 
 ```
-### Expected Output
+#### Expected Output
 
 | NAME                             | READY | STATUS  | RESTARTS | AGE |
 |----------------------------------|-------|---------|----------|-----|
@@ -172,7 +172,7 @@ kubectl exec -it redis -- redis-cli
 127.0.0.1:6379> CONFIG GET maxmemory
 ```
 
-**Expected output:**
+#### Expected Output
 
 | Key          | Value |
 |--------------|-------|
@@ -185,7 +185,7 @@ kubectl exec -it redis -- redis-cli
 127.0.0.1:6379> CONFIG GET maxmemory-policy
 ```
 
-**Expected output:**
+#### Expected Output
 
 | Key              | Value      |
 |------------------|------------|
@@ -262,7 +262,7 @@ To confirm the applied Redis configuration in the Redis Pod, connect to the Redi
     127.0.0.1:6379> CONFIG GET maxmemory
     ```
 
-    **Expected output:**
+    #### Expected Output
 
     | Key         | Value  |
     |-------------|--------|
@@ -275,7 +275,7 @@ To confirm the applied Redis configuration in the Redis Pod, connect to the Redi
     127.0.0.1:6379> CONFIG GET maxmemory-policy
     ```
 
-    **Expected output:**
+    #### Expected Output
 
     | Key                | Value       |
     |--------------------|-------------|
@@ -308,7 +308,7 @@ To confirm the applied Redis configuration in the Redis Pod, connect to the Redi
     127.0.0.1:6379> CONFIG GET maxmemory
     ```
 
-    **Expected output:**
+    #### Expected Output
 
     | Key         | Value   |
     |-------------|---------|
@@ -322,7 +322,7 @@ To confirm the applied Redis configuration in the Redis Pod, connect to the Redi
     127.0.0.1:6379> CONFIG GET maxmemory-policy
     ```
 
-    **Expected output:**
+    #### Expected Output
 
     | Key                | Value       |
     |--------------------|-------------|
