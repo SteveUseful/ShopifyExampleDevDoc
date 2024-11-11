@@ -160,35 +160,37 @@ In this step, we will access the Redis CLI within the Pod to verify that the con
 
 1. To verify the current Redis configuration, access the Redis CLI by running the following command:
 
+**Terminal**
 ```shell
 kubectl exec -it redis -- redis-cli
 ```
 
 2. Run the following command in the Redis CLI to check the `maxmemory` configuration:
 
+**Terminal**
 ```shell
 127.0.0.1:6379> CONFIG GET maxmemory
 ```
 
 **Expected output:**
 
-```shell
-1) "maxmemory"
-2) "0"
-```
+| Key          | Value |
+|--------------|-------|
+| maxmemory    | 0     |
 
 3. Run the following command in the Redis CLI to check `maxmemory-policy`:
 
+**Terminal**
 ```shell
 127.0.0.1:6379> CONFIG GET maxmemory-policy
 ```
 
 **Expected output:**
 
-```shell
-1) "maxmemory-policy"
-2) "noeviction"
-```
+| Key              | Value      |
+|------------------|------------|
+| maxmemory-policy | noeviction |
+
 > **Note:** If the values do not display as shown, make sure the Redis Pod is running and accessible. You can check the Pod’s status with `kubectl get pod redis` and re-enter the Redis CLI with `kubectl exec -it redis -- redis-cli`.
 
 ## Step 6: Update `example-redis-config` ConfigMap with Custom Configuration
@@ -210,13 +212,15 @@ In this step, you’ll add specific configuration values to the `example-redis-c
     ```
 
 2. Apply the updated ConfigMap to your Kubernetes cluster:
-    **Terminal**
+
+   **Terminal**
     ```shell
     kubectl apply -f example-redis-config.yaml
     ```
 
 3. Verify the ConfigMap update to confirm your changes:
-    **Terminal**
+
+   **Terminal**
     ```shell
     kubectl describe configmap/example-redis-config
     ```
@@ -324,6 +328,12 @@ To confirm the applied Redis configuration in the Redis Pod, connect to the Redi
     |--------------------|-------------|
     | maxmemory-policy   | allkeys-lru |
 
+### Final Configuration Summary
+
+| Configuration Key   | Expected Value |
+|---------------------|----------------|
+| maxmemory           | 2097152        |
+| maxmemory-policy    | allkeys-lru    |
 
 ## Step 8: Clean up resources
 As the final step, we need to clean up the resources by deleting the Redis Pod and ConfigMap:
@@ -342,7 +352,7 @@ Congratulations! You’ve successfully configured Redis using a ConfigMap in Kub
 - **ConfigMaps in Depth**: Gain a deeper understanding of [ConfigMaps](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/) and how they enable flexible configurations for containerized applications.
 
 ## Community Resources
-The Kubernetes community is a vibrant and collaborative ecosystem where users, developers, and contributors come together to share knowledge, solve problems, and contribute to the growth of Kubernetes. Here are some ways to connect and continue learning:
+The Kubernetes community is a vibrant and collaborative ecosystem where users, developers, and contributors come together to share knowledge, solve problems, and contribute to the growth of Kubernetes. 
 
 - **Kubernetes Support Resources**: Visit the [Kubernetes Community Support page](https://kubernetes.io/community/) to access our Youtube channel, tutorials, examples, and guides designed to help you succeed in using Kubernetes effectively.
 - **Kubernetes Forum**: Join the discussion on the [Kubernetes Forum](https://discuss.kubernetes.io/)—an ideal place for sharing ideas, asking questions, and finding support from other Kubernetes users and developers.
