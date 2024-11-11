@@ -21,9 +21,9 @@ In this tutorial, you'll learn how to...
 
 | Requirement           | Description                                                                                                     |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------|
-| Kubernetes cluster    | Access to a Kubernetes cluster with `kubectl` installed (version 1.14 or higher).                              |
-| Familiarity           | Familiarity with [ConfigMaps](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/). |
-| **Redis Basics**      | Basic knowledge of Redis setup and configurations.                                                              |
+| **Kubernetes Cluster**    | Access to a Kubernetes cluster with `kubectl` installed (version 1.14 or higher).                              |
+| **Familiarity**           | Familiarity with [ConfigMaps](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/). |
+| **Redis Basics**          | Basic knowledge of Redis setup and configurations.                                                              |
 
 <!-- lessoncontent -->
 
@@ -151,8 +151,6 @@ We've left the `redis-config` key in the `example-redis-config` ConfigMap blank:
 | Key          | Value           |
 |--------------|-----------------|
 | redis-config | (empty)         |
-
----
 
 > **Note:** Ensure that the `redis.conf` file path and volume mounts in the Redis Pod manifest align with your configuration. Any discrepancies may prevent Redis from loading the expected configuration. Double-check the `example-redis-config.yaml` file and reapply it if needed.
 
@@ -338,17 +336,15 @@ kubectl delete pod/redis configmap/example-redis-config
 
 
 ## Next Steps
-Congratulations! You’ve successfully configured Redis using a ConfigMap in Kubernetes. Take a look at the articles below to further expand your skills and understanding:
+Congratulations! You’ve successfully configured Redis using a ConfigMap in Kubernetes. To further expand your skills and understanding, take a look at the articles below.
 
 - **Configuration Example**: Review a practical example of [updating configurations via a ConfigMap](https://kubernetes.io/docs/tutorials/configuration/updating-configuration-via-a-configmap/), showing how changes can be applied dynamically within a live Kubernetes environment.
 - **ConfigMaps in Depth**: Gain a deeper understanding of [ConfigMaps](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/) and how they enable flexible configurations for containerized applications.
-- **Performance Optimization**: Improve your Kubernetes clusters by learning about [resource management strategies](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) to ensure Redis runs efficiently in diverse environments.
 
 ## Community Resources
 The Kubernetes community is a vibrant and collaborative ecosystem where users, developers, and contributors come together to share knowledge, solve problems, and contribute to the growth of Kubernetes. Here are some ways to connect and continue learning:
 
 - **Kubernetes Support Resources**: Visit the [Kubernetes Community Support page](https://kubernetes.io/community/) to access our Youtube channel, tutorials, examples, and guides designed to help you succeed in using Kubernetes effectively.
 - **Kubernetes Forum**: Join the discussion on the [Kubernetes Forum](https://discuss.kubernetes.io/)—an ideal place for sharing ideas, asking questions, and finding support from other Kubernetes users and developers.
-- **Kubernetes GitHub Repository**: Dive into the [Kubernetes GitHub repository](https://github.com/kubernetes/kubernetes) to keep up with the latest development efforts, view source code, and participate in issue discussions or code contributions.
 
-By engaging with these resources, you’ll continue to build your Kubernetes expertise and connect with a supportive network of professionals and enthusiasts from around the world!
+> By engaging with these resources, you’ll continue to build your Kubernetes expertise and connect with a supportive network of professionals and enthusiasts worldwide!
