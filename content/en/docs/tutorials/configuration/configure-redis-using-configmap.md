@@ -1,16 +1,21 @@
 <!-- overview -->
 
+<div style="text-align: center;">
+  
 # Configure Redis using a ConfigMap
-This guide walks you through configuring Redis in a Kubernetes environment using ConfigMap, enabling environment-specific Redis configurations. By following these steps, you’ll deploy a Redis instance that leverages Kubernetes’ ConfigMap for efficient, dynamic settings management. 
+In this guide, you’ll learn to set up and configure a Redis instance within a Kubernetes environment using ConfigMaps. With ConfigMaps, you can manage dynamic, environment-specific settings, enhancing flexibility and control over your Redis configurations in Kubernetes. 
+
+![Diagram showing the relationship between Kubernetes Node, Redis Pod, and ConfigMap](../../../images/RedisCMChart.png)
+
+</div>
 
 
 ## What you'll learn
+In this tutorial, you'll learn how to...
 
-In this tutorial, you'll learn how to do the following:
-
-- Create a [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) with Redis configuration values.
-- Deploy a Redis Pod that uses the created ConfigMap.
-- Verify that the configuration was applied successfully.
+- **Create** a [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) with Redis configuration values.
+- **Deploy** a Redis Pod that uses the created ConfigMap.
+- **Verify** that the configuration was applied successfully.
 
 ## Requirements
 
@@ -18,13 +23,13 @@ In this tutorial, you'll learn how to do the following:
 |-----------------------|-----------------------------------------------------------------------------------------------------------------|
 | Kubernetes cluster    | Access to a Kubernetes cluster with `kubectl` installed (version 1.14 or higher).                              |
 | Familiarity           | Familiarity with [ConfigMaps](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/). |
-| Knowledge             | Basic knowledge of Kubernetes and Redis configurations.                                                         |
+| **Redis Basics**      | Basic knowledge of Redis setup and configurations.                                                              |
 
 <!-- lessoncontent -->
 
 ## Step 1: Create a ConfigMap for Redis Configuration
 
-To manage Redis configurations externally, create a ConfigMap that will hold Redis-specific settings.
+To manage Redis configurations externally, create a ConfigMap to hold Redis-specific settings.
 
 Create a file named `example-redis-config.yaml` with the following content:
 
@@ -310,7 +315,18 @@ kubectl delete pod/redis configmap/example-redis-config
 > Note: It's important to remove resources that are no longer needed to avoid unnecessary resource consumption in your Kubernetes cluster. Ensure that both the Redis Pod and ConfigMap are successfully deleted.
 
 
-## Next steps
+## Next Steps
+Congratulations! You’ve successfully configured Redis using a ConfigMap in Kubernetes. Take a look at the articles below to further expand your skills and understanding:
 
-* Learn more about [ConfigMaps](/docs/tasks/configure-pod-container/configure-pod-configmap/).
-* Follow an example of [Updating configuration via a ConfigMap](/docs/tutorials/configuration/updating-configuration-via-a-configmap/).
+- **Configuration Example**: Review a practical example of [updating configurations via a ConfigMap](https://kubernetes.io/docs/tutorials/configuration/updating-configuration-via-a-configmap/), showing how changes can be applied dynamically within a live Kubernetes environment.
+- **ConfigMaps in Depth**: Gain a deeper understanding of [ConfigMaps](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/) and how they enable flexible configurations for containerized applications.
+- **Performance Optimization**: Improve your Kubernetes clusters by learning about [resource management strategies](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) to ensure Redis runs efficiently in diverse environments.
+
+## Community Resources
+The Kubernetes community is a vibrant and collaborative ecosystem where users, developers, and contributors come together to share knowledge, solve problems, and contribute to the growth of Kubernetes. Here are some ways to connect and continue learning:
+
+- **Kubernetes Support Resources**: Visit the [Kubernetes Community Support page](https://kubernetes.io/community/) to access our Youtube channel, tutorials, examples, and guides designed to help you succeed in using Kubernetes effectively.
+- **Kubernetes Forum**: Join the discussion on the [Kubernetes Forum](https://discuss.kubernetes.io/)—an ideal place for sharing ideas, asking questions, and finding support from other Kubernetes users and developers.
+- **Kubernetes GitHub Repository**: Dive into the [Kubernetes GitHub repository](https://github.com/kubernetes/kubernetes) to keep up with the latest development efforts, view source code, and participate in issue discussions or code contributions.
+
+By engaging with these resources, you’ll continue to build your Kubernetes expertise and connect with a supportive network of professionals and enthusiasts from around the world!
