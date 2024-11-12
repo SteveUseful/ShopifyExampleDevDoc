@@ -2,7 +2,7 @@
 <!-- <div style="text-align: center;"></div> Not Supported-->
   
 ## Configure Redis using a ConfigMap
-A [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/)! will allow you to manage dynamic, environment-specific settings, enhancing flexibility and control over your Redis configurations in [Kubernetes](https://kubernetes.io/docs/tutorials/kubernetes-basics/).  
+A [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) will allow you to manage dynamic, environment-specific settings, enhancing flexibility and control over your Redis configurations in [Kubernetes](https://kubernetes.io/docs/tutorials/kubernetes-basics/).  
 
 ![Diagram showing the relationship between Kubernetes Node, Redis Pod, and ConfigMap](/content/en/docs/images/RedisCMChart.png)
 > This illustration shows how Redis is configured in a Kubernetes environment using 'ConfigMaps'.
