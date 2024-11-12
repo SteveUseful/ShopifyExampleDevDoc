@@ -340,7 +340,7 @@ To verify that the Redis configuration has been correctly applied, connect to th
 | maxmemory           | 2097152        |
 | maxmemory-policy    | allkeys-lru    |
 
-## Step 8: Clean up resources
+### Step 8: Clean up resources
 As the final step, we need to clean up the resources by deleting the Redis Pod and ConfigMap:
 
 **Terminal**
