@@ -288,7 +288,7 @@ To verify that the Redis configuration has been correctly applied, connect to th
 
 > The default policy of the `noeviction` setting prevents data eviction when memory limits are reached. The `ConfigMap` values are not yet reflected because the 'Redis Pod' must be restarted for updated values to take effect.
 
-4. Restart the 'redis pod' to apply updated `ConfigMap` values by deleting and redeploying:
+4. Restart the `redis pod` to apply updated `ConfigMap` values by deleting and redeploying:
 
    **Terminal**
     ```shell
