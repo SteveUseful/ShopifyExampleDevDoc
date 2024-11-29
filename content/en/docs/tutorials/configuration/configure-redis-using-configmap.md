@@ -4,9 +4,8 @@
 
 A [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) is a [Kubernetes](https://kubernetes.io/docs/tutorials/kubernetes-basics/) object that separates app configurations from code. This allows you to dynamically manage environment-specific settings, such as Redis memory limits or eviction policies, without rebuilding your container.
 
-> Imagine scaling a web app where Redis handles session caching. As traffic increases, you need to adjust memory settings dynamically without downtime. ConfigMaps make this seamless.
-
 ![Diagram showing the relationship between Kubernetes Node, Redis Pod, and ConfigMap](/content/en/docs/images/RedisCMChart.png)
+> Imagine scaling a web app where Redis handles session caching. As traffic increases, you need to adjust memory settings dynamically without downtime. ConfigMaps make this seamless.
 
 ### What You'll Learn
 1. **Set up a ConfigMap:** Dynamically manage Redis configurations.
