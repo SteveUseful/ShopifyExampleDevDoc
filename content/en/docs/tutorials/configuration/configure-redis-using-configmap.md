@@ -1,18 +1,16 @@
 <!-- overview -->
-<!-- <div style="text-align: center;"></div> Not Supported-->
-  
+
 ## Configure Redis using a ConfigMap
-A [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) will allow you to manage dynamic, environment-specific settings, enhancing flexibility and control over your Redis configurations in [Kubernetes](https://kubernetes.io/docs/tutorials/kubernetes-basics/).  
+A [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) is a [Kubernetes](https://kubernetes.io/docs/tutorials/kubernetes-basics/) object that separates app configurations from code, allowing you to manage environment-specific settings dynamically. By using ConfigMaps, you can update Redis configurations like memory limits or eviction policies without downtime or rebuilding your container. A ConfigMap is a Kubernetes object that lets you separate app configurations from code and ensures your Redis Pod can be updated dynamically. 
 
 ![Diagram showing the relationship between Kubernetes Node, Redis Pod, and ConfigMap](/content/en/docs/images/RedisCMChart.png)
-> This illustration shows how Redis is configured in a Kubernetes environment using `ConfigMaps`.
+> This illustration shows how Redis is configured in a Kubernetes environment using `ConfigMaps`. Imagine scaling a web app and needing Redis for session caching. As user traffic increases, you must adjust memory settings dynamically without downtime. ConfigMaps makes this seamless.
 
 ### What you'll learn
-In this tutorial, you will:
-
-- **Create a ConfigMap**: Learn how to configure Redis values for a flexible setup.
-- **Deploy a Redis Pod**: Use the ConfigMap to manage configurations dynamically.
-- **Verify Configuration**: Confirm that Redis is running with the correct settings.
+- **Create a ConfigMap**: Set up dynamic Redis configurations.
+- **Deploy a Redis Pod**: Link the ConfigMap to your Redis instance.
+- **Verify Configuration**: Use Redis CLI to ensure settings are applied.
+- **Update Redis Settings**: Adjust Redis settings in real-time.
 
 ### Requirements
 
@@ -20,18 +18,19 @@ In this tutorial, you will:
 |-----------------------|-----------------------------------------------------------------------------------------------------------------|
 | **Kubernetes Cluster**    | Access to a Kubernetes cluster with `kubectl` installed (version 1.14 or higher).                              |
 | **ConfigMaps**            | Familiarity with [ConfigMaps](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/). |
-| **Redis Basics**          | Basic knowledge of Redis setup and configurations.                                                              |
-> If you do not already have a cluster, you can create one by using [minikube](https://minikube.sigs.k8s.io/docs/tutorials/multi_node/) or you can use one of these Kubernetes playgrounds:
+| **Redis Basics**          | Basic knowledge of Redis setup and commands (`kubectl` and `redis-cli`).                                 |
+> If you do not have a cluster, you can create one by using [minikube](https://minikube.sigs.k8s.io/docs/tutorials/multi_node/) or use one of these Kubernetes playgrounds:
 
 > [Killercoda](https://killercoda.com/playgrounds/scenario/kubernetes)
-
 > [Play with Kubernetes](https://labs.play-with-k8s.com/)
+
+#### ConfigMaps are essential for dynamic and scalable deployments. Whether you’re adjusting Redis caching for a growing app or managing multi-environment setups, this tutorial will help you configure Redis efficiently in Kubernetes.
 
 <!-- lessoncontent -->
 
 ### Step 1: Create a ConfigMap for Redis Configuration
 
-A `ConfigMap` allows you to manage `Redis` configurations externally. Let’s start by creating one that will hold Redis-specific settings.
+Let’s start by creating a ConfigMap that will hold Redis-specific settings.
 
 1. In your terminal, create a file called `example-redis-config.yaml` with the following content:
 
