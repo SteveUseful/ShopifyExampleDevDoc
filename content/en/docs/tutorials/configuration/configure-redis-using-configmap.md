@@ -175,7 +175,6 @@ kubectl describe configmap/example-redis-config
 **Expected Output**
 ```shell
 # Redis Pod manifest configuration (pods/config/redis-pod.yaml)
-
 apiVersion: v1                     # Specifies Kubernetes API version
 kind: Pod                          # Declares this object as a Pod
 metadata:
@@ -197,6 +196,7 @@ spec:
         items:
         - key: redis-config
           path: redis.conf         # Sets ConfigMap key path inside the container
+```
 
 > View the full [`redis-pod.yaml`](https://github.com/SteveUseful/ShopifyExampleDevDoc/blob/shopify-style-updates/content/en/examples/pods/config/redis-pod.yaml) file in the GitHub repository.
 > **Pro Tip**: Always review your manifest files to ensure they align with your intended deployment setup.
